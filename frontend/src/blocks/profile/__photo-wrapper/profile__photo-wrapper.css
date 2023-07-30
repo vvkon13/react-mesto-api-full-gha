@@ -1,0 +1,19 @@
+.profile__photo-wrapper {
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 1;
+  background-color: rgba(0, 0, 0);
+}
+
+.profile__photo-wrapper:hover {
+  opacity: 0.2;
+  cursor: url(../../../images/cursor_avatar.png), pointer;
+  transition: opacity .4s linear;
+}

@@ -1,0 +1,17 @@
+.profile__info {
+  display: block;
+  box-sizing: border-box;
+  max-width: 548px;
+}
+
+@media (max-width:880px) {
+  .profile__info {
+    max-width: calc(100vw - 382px);
+  }
+}
+
+@media (max-width:564px) {
+  .profile__info {
+    max-width: 282px;
+  }
+}

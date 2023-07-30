@@ -1,0 +1,14 @@
+.profile__string-and-button {
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+@media (max-width:564px) {
+  .profile__string-and-button {
+    gap: 10px;
+    max-width: 282px;
+  }
+}

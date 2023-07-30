@@ -1,0 +1,10 @@
+.page__content {
+  max-width: 880px;
+  margin: 40px auto 67px auto;
+}
+
+@media (max-width:564px) {
+  .page__content {
+    margin-bottom: 48px;
+  }
+}

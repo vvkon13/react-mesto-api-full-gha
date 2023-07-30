@@ -1,0 +1,17 @@
+.profile__main {
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width:564px) {
+  .profile__main {
+    flex-wrap: wrap;
+    gap: 26px;
+    max-width: 282px;
+  }
+}

@@ -1,0 +1,10 @@
+.card {
+  max-width: 282px;
+  min-height: 361px;
+  border-radius: 10px;
+  background: #FFFFFF;
+  color: rgba(0, 0, 0, 1);
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+}

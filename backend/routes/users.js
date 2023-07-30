@@ -9,7 +9,7 @@ const {
   getUserMe,
   patchUser,
 } = require('../controllers/users');
-const { USER_VALIDATION_OBJECT_NOT_REQUIRED, REG_EX_URL } = require('../utils/constants');
+const { USER_VALIDATION_OBJECT_NOT_REQUIRED } = require('../utils/constants');
 
 router.get('/', getUsers);
 router.get('/me', getUserMe);
@@ -19,10 +19,6 @@ router.get('/:userId', celebrate({
   }).unknown(true),
 }), getUser);
 router.patch('/me', celebrate(USER_VALIDATION_OBJECT_NOT_REQUIRED), patchUser);
-router.patch('/me/avatar', celebrate({
-  body: Joi.object().keys({
-    avatar: Joi.string().pattern(REG_EX_URL),
-  }),
-}), patchUser);
+router.patch('/me/avatar', celebrate(USER_VALIDATION_OBJECT_NOT_REQUIRED), patchUser);
 
 module.exports = router;

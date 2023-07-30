@@ -5,6 +5,7 @@ const {
   errors,
   celebrate,
 } = require('celebrate');
+const cors = require('cors');
 const usersRoutes = require('./routes/users');
 const cardsRoutes = require('./routes/cards');
 const { login, createUser } = require('./controllers/users');
@@ -15,6 +16,7 @@ const NotFoundError = require('./errors/NotFoundErr');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 app.use(requestLogger);
 app.post('/signin', celebrate(USER_VALIDATION_OBJECT), login);

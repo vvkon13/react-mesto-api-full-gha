@@ -9,23 +9,26 @@ class Api {
   };
 
   getUserInformation() {
+    const token = localStorage.getItem('token');
     return this._request('/users/me', {
       method: 'GET',
-      headers: this.headers
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`})
     });
   };
 
   getInitialCards() {
+    const token = localStorage.getItem('token');
     return this._request('/cards', {
       method: 'GET',
-      headers: this.headers
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`})
     });
   };
 
   setUserInformation({ name, about }) {
+    const token = localStorage.getItem('token');
     return this._request('/users/me', {
       method: 'PATCH',
-      headers: this.headers,
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`}),
       body: JSON.stringify({
         name,
         about
@@ -34,9 +37,10 @@ class Api {
   };
 
   addCard(name, link) {
+    const token = localStorage.getItem('token');
     return this._request('/cards', {
       method: 'POST',
-      headers: this.headers,
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`}),
       body: JSON.stringify({
         name: name,
         link: link
@@ -45,23 +49,26 @@ class Api {
   };
 
   deleteCard(cardId) {
+    const token = localStorage.getItem('token');
     return this._request(`/cards/${cardId}`, {
       method: 'DELETE',
-      headers: this.headers
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`})
     });
   };
 
   likeCard(cardId) {
+    const token = localStorage.getItem('token');
     return this._request(`/cards/${cardId}/likes`, {
       method: 'PUT',
-      headers: this.headers
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`})
     });
   };
 
   removeLikeCard(cardId) {
+    const token = localStorage.getItem('token');
     return this._request(`/cards/${cardId}/likes`, {
       method: 'DELETE',
-      headers: this.headers
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`})
     });
   };
 
@@ -76,9 +83,10 @@ class Api {
   }
 
   updateAvatarUser(avatarLink) {
+    const token = localStorage.getItem('token');
     return this._request('/users/me/avatar', {
       method: 'PATCH',
-      headers: this.headers,
+      headers: Object.assign(this.headers,{"Authorization" : `Bearer ${token}`}),
       body: JSON.stringify({
         avatar: avatarLink
       })
@@ -123,15 +131,14 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-64',
+  baseUrl: 'http://localhost:3000',
   headers: {
-    authorization: 'fd367575-aa2a-4d14-b6f6-0479dde56c06',
     'Content-Type': 'application/json'
   }
 });
 
 const apiAuth = new Api({
-  baseUrl: 'https://auth.nomoreparties.co',
+  baseUrl: 'http://localhost:3000',
   headers: {
     "Content-Type": "application/json"
   }

@@ -67,7 +67,7 @@ const createUser = (req, res, next) => {
       req.body.password = hash;
       User.create(req.body)
         .then((user) => res.status(SUCCESS_CREATING_RESOURCE_CODE)
-          .send({ ...user._doc, password: undefined }))
+          .send({ data: { _id: user._id, email: user.email } }))
         .catch((err) => {
           next(errorHandlerUsers(err));
         });

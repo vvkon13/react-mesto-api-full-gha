@@ -131,14 +131,14 @@ class Api {
 }
 
 const api = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.groundhogday.nomoreparties.co',
   headers: {
     'Content-Type': 'application/json'
   }
 });
 
 const apiAuth = new Api({
-  baseUrl: 'http://localhost:3000',
+  baseUrl: 'https://api.groundhogday.nomoreparties.co',
   headers: {
     "Content-Type": "application/json"
   }

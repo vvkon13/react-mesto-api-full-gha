@@ -10,7 +10,7 @@ module.exports = (req, res, next) => {
   const token = authorization.replace('Bearer ', '');
   let payload;
   try {
-    payload = jwt.verify(token, JWT_SECRET);
+    payload = jwt.verify(token, process.env.NODE_ENV === 'production' ? JWT_SECRET : 'SpartakChampion2024');
   } catch (err) {
     next(new IncorrectEmailPasswordError('Неправильные почта или пароль'));
   }

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -19,6 +20,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(requestLogger);
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
 app.post('/signin', celebrate(USER_VALIDATION_OBJECT), login);
 app.post('/signup', celebrate(USER_VALIDATION_OBJECT), createUser);
 app.use(auth);

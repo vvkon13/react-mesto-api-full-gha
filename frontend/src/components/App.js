@@ -39,7 +39,7 @@ function App() {
       setIsLoading(true);
       apiAuth.keyAuthentication(token)
         .then((data) => {
-          setCurrentUserEmail(data.data.email);
+          setCurrentUserEmail(data.email);
           setLoggedIn(true);
           navigate('/main');
         })

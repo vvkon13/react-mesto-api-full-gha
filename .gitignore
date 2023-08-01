@@ -26,3 +26,7 @@ logs
 
 # Optional npm cache directory
 .npm
+
+build
+
+.env

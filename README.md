@@ -9,7 +9,7 @@
 
 ## Ссылки на проект!!!
 
-IP-адрес 158.160.53.78
+IP g158.160.53.78
 
 Frontend https://groundhogday.nomoreparties.co
 

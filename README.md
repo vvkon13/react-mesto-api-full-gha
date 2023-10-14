@@ -5,3 +5,4 @@
 
 Адрес репозитория: https://github.com/vvkon13/react-mesto-api-full-gha.git
 
+<!--- https://vercel.com/home    бесплатный сервис для размещения страниц --->
